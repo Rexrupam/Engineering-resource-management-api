@@ -1,7 +1,15 @@
 import mongoose from "mongoose"
+
+export const user1Id = new mongoose.Types.ObjectId
+export const user2Id = new mongoose.Types.ObjectId
+export const user3Id = new mongoose.Types.ObjectId
+export const user4Id = new mongoose.Types.ObjectId
+export const user5Id = new mongoose.Types.ObjectId
+ 
+
 export const users = [
   {
-    _id: new mongoose.Types.ObjectId('64f1b0c1c2b7a5a1a1a1a1a1'),
+    _id: user1Id,
     email: "alice@company.com",     
     name: "Alice",
     role: "engineer",
@@ -11,7 +19,7 @@ export const users = [
     department: "Frontend"
   },
  {
-    _id: new mongoose.Types.ObjectId("64f1b0c1c2b7a5a1a1a1a1a2"),
+    _id: user2Id,
     email: "bob@company.com",       
     name: "Bob",
     role: "engineer",
@@ -21,7 +29,7 @@ export const users = [
     department: "Backend"
   },
   {
-    _id: new mongoose.Types.ObjectId("64f1b0c1c2b7a5a1a1a1a1a3"),
+    _id: user3Id,
     email: "carol@company.com",  
     name: "Carol",
     role: "engineer",
@@ -31,7 +39,7 @@ export const users = [
     department: "Fullstack"
   },
   {
-    _id: new mongoose.Types.ObjectId("64f1b0c1c2b7a5a1a1a1a1a4"),
+    _id: user4Id,
     email: "dave@company.com",      
     name: "Dave",
     role: "engineer",
@@ -41,7 +49,7 @@ export const users = [
     department: "Backend"
   },
   {
-    _id: new mongoose.Types.ObjectId("64f1b0c1c2b7a5a1a1a1a1a5"),
+    _id: user5Id,
     email: "manager@company.com",  
     name: "Eve",
     role: "manager"

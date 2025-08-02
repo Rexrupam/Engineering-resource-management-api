@@ -2,6 +2,7 @@ import express from "express"
 import HealthCheckRouter from "./router/healthCheck.route.js"
 import bodyParser from "body-parser"
 import cookieParser from "cookie-parser"
+import authRouter from "./router/auth.router.js"
 import cors from "cors"
 const app = express()
 
@@ -16,5 +17,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(cookieParser())
 
-app.use('/', HealthCheckRouter)
+app.use('/api', HealthCheckRouter)
+app.use('/api', authRouter)
 export { app }; 

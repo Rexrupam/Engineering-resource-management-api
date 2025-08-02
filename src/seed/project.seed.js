@@ -1,8 +1,15 @@
 import mongoose, {Schema} from "mongoose"
+import { user5Id } from "./user.seed.js";
+
+export const project1Id = new mongoose.Types.ObjectId
+export const project2Id = new mongoose.Types.ObjectId
+export const project3Id = new mongoose.Types.ObjectId
+export const project4Id = new mongoose.Types.ObjectId
+
 
 export const projects = [
   {
-    _id: new mongoose.Types.ObjectId("75a1b0c1c2b7a5a1a1a1a1a1"),
+    _id: project1Id,
     name: "Project Atlas",
     description: "Internal dashboard revamp",
     startDate: new Date("2025-08-01"),
@@ -10,10 +17,10 @@ export const projects = [
     requiredSkills: ["React", "Node.js"],
     teamSize: 3,
     status: "active",
-    managerId: new mongoose.Types.ObjectId("64f1b0c1c2b7a5a1a1a1a1a5")
+    managerId: user5Id
   },
   {
-    _id:new mongoose.Types.ObjectId("75a1b0c1c2b7a5a1a1a1a1a2"),
+    _id: project2Id,
     name: "Project Beacon",
     description: "Backend service for analytics",
     startDate: new Date("2025-07-15"),
@@ -21,10 +28,10 @@ export const projects = [
     requiredSkills: ["Python", "Django"],
     teamSize: 2,
     status: "active",
-    managerId: new mongoose.Types.ObjectId("64f1b0c1c2b7a5a1a1a1a1a5")
+    managerId: user5Id
   },
   {
-    _id: new mongoose.Types.ObjectId("75a1b0c1c2b7a5a1a1a1a1a3"),
+    _id: project3Id,
     name: "Project Cypher",
     description: "AI Integration Pilot",
     startDate: new Date("2025-09-01"),
@@ -32,10 +39,10 @@ export const projects = [
     requiredSkills: ["Python", "React"],
     teamSize: 4,
     status: "planning",
-    managerId: new mongoose.Types.ObjectId("64f1b0c1c2b7a5a1a1a1a1a5")
+    managerId: user5Id
   },
   {
-    _id: new mongoose.Types.ObjectId("75a1b0c1c2b7a5a1a1a1a1a4"),
+    _id: project4Id,
     name: "Project Delta",
     description: "Legacy migration",
     startDate: new Date("2025-06-01"),
@@ -43,6 +50,6 @@ export const projects = [
     requiredSkills: ["Node.js", "MongoDB"],
     teamSize: 2,
     status: "completed",
-    managerId: new mongoose.Types.ObjectId("64f1b0c1c2b7a5a1a1a1a1a5")
+    managerId: user5Id
   }
 ];

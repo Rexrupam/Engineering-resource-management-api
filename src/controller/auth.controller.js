@@ -1,4 +1,3 @@
-
 import {User} from "../model/user.model.js"
 
 const generateAccessAndRefreshTokens= async(userId)=>{
@@ -13,7 +12,7 @@ const generateAccessAndRefreshTokens= async(userId)=>{
 } 
 
 export const login=async(req,res)=>{
-    const { email, role } = req.body 
+    const { email, role } = req.body || {};
     
     if(!email || !role){
         return res.status(400).send("email and role required");
@@ -27,7 +26,6 @@ export const login=async(req,res)=>{
     if(!user){
          return res.status(400).send("Not a registered user");
     }
-    console.log(user)
     const {accessToken, refreshToken} = await generateAccessAndRefreshTokens(user._id)
 
     const options={
@@ -43,14 +41,9 @@ export const login=async(req,res)=>{
 }
 
 export const getProfile=async(req,res)=>{
-    console.log(req)
-    const { user } = req.user
-    console.log("user in controller", user)
-    if(!user){
-        return res.status(401).send("Invalid token")
-    }
+    const user = req.user
 
-    const fetchUser = await findById(user._id)
+    const fetchUser = await User.findById(user._id).select("-refreshToken -__v")
 
     if(!fetchUser){
         return res.status(500).send("Unable to find user")
@@ -58,6 +51,6 @@ export const getProfile=async(req,res)=>{
 
     return res
     .status(200)
-    .json({message: "User profile fetched successfully"}, fetchUser)
+    .json({message: "User profile fetched successfully", user: fetchUser})
 
 }

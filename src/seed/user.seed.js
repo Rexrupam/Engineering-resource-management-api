@@ -45,7 +45,7 @@ export const users = [
     role: "engineer",
     skills: ["Node.js", "MongoDB"],
     seniority: "mid",
-    maxCapacity: 50,
+    maxCapacity: 100,
     department: "Backend"
   },
   {

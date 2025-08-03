@@ -3,6 +3,8 @@ import HealthCheckRouter from "./router/healthCheck.route.js"
 import bodyParser from "body-parser"
 import cookieParser from "cookie-parser"
 import authRouter from "./router/auth.router.js"
+import  engineerRouter from "./router/engineer.route.js"
+import projectRouter from "./router/project.route.js"
 import cors from "cors"
 const app = express()
 
@@ -11,12 +13,14 @@ app.use(cors({
     credentials: true
 }))
 
-app.use(cookieParser())
-
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser())
 
 app.use('/api', HealthCheckRouter)
-app.use('/api', authRouter)
-export { app }; 
+app.use('/api/auth', authRouter)
+app.use('/api/engineers', engineerRouter)
+app.use('/api/projects', projectRouter)
+export { app };

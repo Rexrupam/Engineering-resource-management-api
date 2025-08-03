@@ -6,7 +6,7 @@ export const assignments=[
     {
     engineerId: user1Id, // Alice
     projectId: project1Id, // Atlas
-    allocationPercentage: 70,
+    allocationPercentage: 60,
     startDate: new Date("2025-08-01"),
     endDate: new Date("2025-10-31"),
     role: "Frontend Developer"

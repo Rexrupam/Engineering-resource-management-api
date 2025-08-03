@@ -2,9 +2,10 @@ import express from "express"
 import HealthCheckRouter from "./router/healthCheck.route.js"
 import bodyParser from "body-parser"
 import cookieParser from "cookie-parser"
-import authRouter from "./router/auth.router.js"
+import authRouter from "./router/auth.route.js"
 import  engineerRouter from "./router/engineer.route.js"
 import projectRouter from "./router/project.route.js"
+import assignmentRouter from "./router/assignment.route.js"
 import cors from "cors"
 const app = express()
 
@@ -23,4 +24,5 @@ app.use('/api', HealthCheckRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/engineers', engineerRouter)
 app.use('/api/projects', projectRouter)
+app.use('/api/assignments', assignmentRouter)
 export { app };
